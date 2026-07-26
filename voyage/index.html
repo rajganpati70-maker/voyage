@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyage 2026 — GRID Community Hackathon</title>
+  <meta name="description" content="Voyage – Beyond the Horizon. A 36-hour national hackathon by GRID Community. Sail Beyond Limits. Build Beyond Horizons." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>" />
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" id="navbar">
+  <a href="#hero" class="nav-logo">VOYAGE <span>2026</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#tracks">Tracks</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#prizes">Prizes</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#register" class="nav-btn">REGISTER NOW →</a>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <canvas id="starfield" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="hero-badge">⛵ GRID COMMUNITY PRESENTS</span>
+      <h1 class="hero-title">
+        VOYAGE <span class="accent">2026</span>
+      </h1>
+      <p class="hero-sub">
+        Sail Beyond Limits. Build Beyond Horizons.<br>
+        A premier 36-hour national hackathon where innovators transform ideas into impact.
+      </p>
+      <div class="hero-btns">
+        <a href="#register" class="btn-primary">Register Now →</a>
+        <a href="#tracks" class="btn-secondary">Explore Tracks</a>
+      </div>
+    </div>
+
+    <!-- 3D Floating Objects -->
+    <div class="hero-3d">
+      <!-- Hexagon / Ship Wheel -->
+      <div class="float-obj obj-hex">
+        <svg viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1a4a42;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0d2e28;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <polygon points="100,10 185,57 185,173 100,220 15,173 15,57"
+            fill="url(#hexGrad)" stroke="rgba(77,217,201,0.4)" stroke-width="1.5"/>
+          <polygon points="100,30 170,70 170,160 100,200 30,160 30,70"
+            fill="none" stroke="rgba(77,217,201,0.15)" stroke-width="1"/>
+          <circle cx="100" cy="115" r="28" fill="none" stroke="rgba(77,217,201,0.3)" stroke-width="1.5"/>
+          <line x1="100" y1="87" x2="100" y2="143" stroke="rgba(77,217,201,0.25)" stroke-width="1"/>
+          <line x1="76" y1="101" x2="124" y2="129" stroke="rgba(77,217,201,0.25)" stroke-width="1"/>
+          <line x1="76" y1="129" x2="124" y2="101" stroke="rgba(77,217,201,0.25)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <!-- Compass -->
+      <div class="float-obj obj-compass">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="36" fill="rgba(13,31,53,0.8)" stroke="rgba(77,217,201,0.4)" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(77,217,201,0.15)" stroke-width="1"/>
+          <polygon points="40,12 44,40 40,34 36,40" fill="rgba(201,168,76,0.9)"/>
+          <polygon points="40,68 44,40 40,46 36,40" fill="rgba(77,217,201,0.5)"/>
+          <circle cx="40" cy="40" r="3" fill="rgba(77,217,201,0.8)"/>
+          <text x="40" y="9" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(201,168,76,0.8)">N</text>
+          <text x="40" y="76" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(77,217,201,0.6)">S</text>
+          <text x="74" y="43" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(77,217,201,0.6)">E</text>
+          <text x="6" y="43" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(77,217,201,0.6)">W</text>
+        </svg>
+      </div>
+
+      <!-- Ring / Anchor -->
+      <div class="float-obj obj-ring">
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(77,217,201,0.35)" stroke-width="2"/>
+          <circle cx="30" cy="30" r="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+          <circle cx="30" cy="30" r="4" fill="rgba(77,217,201,0.5)"/>
+          <line x1="30" y1="4" x2="30" y2="56" stroke="rgba(77,217,201,0.15)" stroke-width="1"/>
+          <line x1="4" y1="30" x2="56" y2="30" stroke="rgba(77,217,201,0.15)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partner strip -->
+  <div class="hero-partners">
+    <div class="partner-group">
+      <div class="partner-label">Organised By</div>
+      <div class="partner-logos">
+        <span class="partner-logo-tag">GRID COMMUNITY</span>
+      </div>
+    </div>
+    <div class="partner-group">
+      <div class="partner-label">Title Sponsor</div>
+      <div class="partner-logos">
+        <span class="partner-logo-tag">Algorand</span>
+        <span class="partner-logo-tag">OSEN</span>
+      </div>
+    </div>
+    <div class="partner-group">
+      <div class="partner-label">In Partnership With</div>
+      <div class="partner-logos">
+        <span class="partner-logo-tag">Mewayz</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-left">
+        <span class="section-label">About Voyage 2026</span>
+        <h2 class="about-title">
+          Sail Beyond Limits.<br>
+          Build Beyond <span class="accent">Horizons.</span>
+        </h2>
+        <div class="about-body">
+          <p>Voyage – Beyond the Horizon is a premier 36-hour innovation challenge that brings together students, developers, designers, and innovators to solve real-world problems through technology.</p>
+          <p>Over 36 hours of continuous brainstorming, collaboration, and technical creativity, participants will transform ideas into impactful solutions while pushing the boundaries of innovation.</p>
+          <p>Whether you're passionate about AI, Blockchain, FinTech, Healthcare, or Open Innovation, Voyage provides the perfect environment to learn, experiment, and grow.</p>
+        </div>
+        <div class="about-divider"></div>
+      </div>
+      <div class="about-right">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="stat-val">36 Hrs</div>
+            <div class="stat-key">Hackathon Duration</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="stat-val">40 Teams</div>
+            <div class="stat-key">3–4 Members Each</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div class="stat-val">₹25,000</div>
+            <div class="stat-key">Total Prize Pool</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="stat-val">26–27 Sept</div>
+            <div class="stat-key">September 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="about-quote">
+      Building <span class="hl">real-world solutions</span> that create measurable impact across AI, Blockchain, and Healthcare.
+    </p>
+  </div>
+</section>
+
+<!-- ==================== ABOUT GRID ==================== -->
+<section id="grid-about" style="padding:60px 0; background:#020b18;">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="section-label">Who We Are</span>
+      <h2 class="section-title">About <span class="accent">GRID Community</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:14px;padding:36px;">
+        <div style="font-family:var(--pixel-font);font-size:28px;color:var(--gold);margin-bottom:8px;">2000+</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-family:var(--mono-font);letter-spacing:2px;text-transform:uppercase;">Community Members</div>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.8;">GRID Community is a student-led community of more than 2000 members dedicated to empowering students through collaboration, hands-on learning, and real-world opportunities.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:14px;padding:36px;">
+        <div style="font-family:var(--pixel-font);font-size:28px;color:var(--gold);margin-bottom:8px;">800+</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px;font-family:var(--mono-font);letter-spacing:2px;text-transform:uppercase;">Event Registrations</div>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.8;">Our mission is to bridge the gap between academia and industry by organizing hackathons, workshops, bootcamps, webinars, networking events, and technical initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GLIMPSES ==================== -->
+<section id="glimpses">
+  <div class="section-inner glimpses-heading">
+    <span class="section-label">Past Events</span>
+    <h2 class="section-title">Glimpses From <span class="accent">GRID Events</span></h2>
+  </div>
+  <div class="gallery-track">
+    <div class="gallery-item" style="background:linear-gradient(135deg,#0d2e28,#091a30);">
+      <div style="text-align:center;padding:20px;">
+        <div style="font-size:32px;margin-bottom:8px;">⛵</div>
+        <div style="font-family:var(--mono-font);font-size:10px;color:var(--teal-light);letter-spacing:2px;">VOYAGE 2026</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">First Edition</div>
+      </div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#1a2e0d,#091a30);">
+      <div style="text-align:center;padding:20px;">
+        <div style="font-size:32px;margin-bottom:8px;">🏆</div>
+        <div style="font-family:var(--mono-font);font-size:10px;color:var(--teal-light);letter-spacing:2px;">GRID HACKATHON</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">Workshop Series</div>
+      </div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#1a1a0d,#091a30);">
+      <div style="text-align:center;padding:20px;">
+        <div style="font-size:32px;margin-bottom:8px;">💡</div>
+        <div style="font-family:var(--mono-font);font-size:10px;color:var(--teal-light);letter-spacing:2px;">BOOTCAMPS</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">AI/ML & Blockchain</div>
+      </div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#2e0d1a,#091a30);">
+      <div style="text-align:center;padding:20px;">
+        <div style="font-size:32px;margin-bottom:8px;">🌐</div>
+        <div style="font-family:var(--mono-font);font-size:10px;color:var(--teal-light);letter-spacing:2px;">WEBINARS</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">Expert-Led Sessions</div>
+      </div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#0d1a2e,#1a0d2e);">
+      <div style="text-align:center;padding:20px;">
+        <div style="font-size:32px;margin-bottom:8px;">🤝</div>
+        <div style="font-family:var(--mono-font);font-size:10px;color:var(--teal-light);letter-spacing:2px;">NETWORKING</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">Industry Connect</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TRACKS ==================== -->
+<section id="tracks">
+  <div class="section-inner">
+    <div class="tracks-header">
+      <span class="section-label">Innovation Domains</span>
+      <h2 class="section-title">Choose Your <span class="accent">Track</span></h2>
+      <p class="section-desc">Navigate the Voyage Arena and pick your domain. Every track is designed around real-world challenges and cutting-edge technology.</p>
+    </div>
+    <div class="tracks-grid">
+      <!-- Track 1 -->
+      <div class="track-card">
+        <div class="track-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="track-name">Devil's Triangle</div>
+        <p class="track-desc">Harness the power of Artificial Intelligence and Machine Learning to conquer the unknown. Build cognitive systems, predictive analytics, and intelligent automation that redefine possibilities.</p>
+        <div class="track-num">Track 01 — AI & ML</div>
+      </div>
+      <!-- Track 2 -->
+      <div class="track-card">
+        <div class="track-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="track-name">Fountain of Youth</div>
+        <p class="track-desc">Leverage technology to build smarter, more accessible Healthcare solutions. Tackle challenges in digital health, diagnostics, patient experience, and medical data — making care more human.</p>
+        <div class="track-num">Track 02 — HealthTech</div>
+      </div>
+      <!-- Track 3 -->
+      <div class="track-card">
+        <div class="track-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="track-name">Open Seas</div>
+        <p class="track-desc">Explore uncharted waters with unrestricted innovation — FinTech, Blockchain, Web3, and beyond. Build creative solutions using Algorand or tackle any challenge that drives real-world impact.</p>
+        <div class="track-num">Track 03 — Open Innovation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TIMELINE ==================== -->
+<section id="timeline" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <div class="timeline-header">
+      <span class="section-label">Event Timeline</span>
+      <h2 class="section-title">Hackathon <span class="accent">Roadmap</span></h2>
+      <p class="section-desc" style="margin:0 auto;">Follow the journey from registration to the grand finale and valedictory.</p>
+    </div>
+
+    <div class="timeline-line">
+
+      <!-- Phase 1 -->
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-card">
+            <div class="tl-card-date">Phase 1 — Opens: TBD</div>
+            <div class="tl-card-title">Registration</div>
+            <p class="tl-card-desc">Students register individually or as teams of 3–4 through the official Voyage portal to lock in their participation.</p>
+          </div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <div class="tl-phase-label">PHASE 1</div>
+          <div class="tl-date-label">TBD</div>
+        </div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-node">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="tl-phase-label">PHASE 2</div>
+          <div class="tl-date-label">TBD</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-card">
+            <div class="tl-card-date">Phase 2 — TBD</div>
+            <div class="tl-card-title">Idea Submission & Evaluation</div>
+            <p class="tl-card-desc">Teams submit a proposal covering their Problem Statement, Proposed Solution, Innovation Approach, and Technology Stack. Expert reviewers evaluate all submissions on innovation, feasibility, and impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-card">
+            <div class="tl-card-date">26 Sept – 27 Sept 2026</div>
+            <div class="tl-card-title">Grand Prototype Challenge</div>
+            <p class="tl-card-desc">Selected finalists participate in the high-intensity 36-hour hackathon. Teams build functional prototypes, receive mentorship, and tackle real-world problem statements in a collaborative environment.</p>
+          </div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="tl-phase-label">PHASE 3</div>
+          <div class="tl-date-label">26–27 SEPT</div>
+        </div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <!-- Grand Finale -->
+      <div class="tl-item">
+        <div class="tl-empty"></div>
+        <div class="tl-node">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="tl-phase-label">FINALE</div>
+          <div class="tl-date-label">27 SEPT</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-card">
+            <div class="tl-card-date">27 September 2026</div>
+            <div class="tl-card-title">Jury Presentation & Showcase</div>
+            <p class="tl-card-desc">Finalist teams present live prototype demonstrations and technical solutions before an eminent jury of Industry Leaders, Startup Founders, and domain experts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valedictory -->
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-card">
+            <div class="tl-card-date">27 September 2026 | Closing</div>
+            <div class="tl-card-title">Prize Distribution & Closing</div>
+            <p class="tl-card-desc">Voyage concludes with winner announcements, cash prize distribution, certificates, jury remarks, mentorship network connections, and an exclusive closing ceremony.</p>
+          </div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="tl-phase-label">VALEDICTORY</div>
+          <div class="tl-date-label">27 SEPT</div>
+        </div>
+        <div class="tl-empty"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ROUNDS ==================== -->
+<section id="rounds">
+  <div class="section-inner">
+    <div class="rounds-header">
+      <span class="section-label">Structure</span>
+      <h2 class="section-title">Round <span class="accent">Details</span></h2>
+      <p class="section-desc">Understand the phase requirements, eligibility criteria, and progression steps for Voyage.</p>
+    </div>
+    <div class="rounds-grid">
+      <div class="round-card active">
+        <div class="round-tag">PHASE 01</div>
+        <div class="round-lock">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="round-title">Round 1: Registration & Idea Submission</div>
+        <p class="round-desc">Register your team and submit your idea proposal covering the problem statement, solution approach, and technology stack. Shortlisted teams will be notified via email.</p>
+        <a href="#register" class="btn-primary" style="display:inline-flex;margin-top:8px;">Register Now →</a>
+      </div>
+      <div class="round-card">
+        <div class="round-tag">PHASE 02</div>
+        <div class="round-lock">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="round-title">Round 2: Hackathon Finale</div>
+        <div class="round-reveal">
+          <svg viewBox="0 0 24 24" width="20" height="20" style="display:inline;vertical-align:middle;stroke:var(--text-muted);fill:none;stroke-width:1.5;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Details will be revealed soon.<br>
+          <span style="font-size:11px;">Stay tuned as challenge timelines and tasks are unlocked.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRIZES ==================== -->
+<section id="prizes" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <div class="prizes-header">
+      <span class="section-label">Rewards</span>
+      <h2 class="section-title">Prizes & <span class="accent">Recognition</span></h2>
+      <p class="section-desc" style="margin:0 auto;">Win cash prizes, exclusive merchandise, mentorship sessions, and opportunities to showcase your innovation.</p>
+    </div>
+
+    <div class="prize-main">
+      <div class="prize-amount">₹25,000</div>
+      <p class="prize-label">Grand cash prize pool awarded to the top-performing teams demonstrating exceptional innovation and technical execution.</p>
+    </div>
+
+    <div class="prize-breakdown">
+      <div class="prize-place first">
+        <div class="prize-place-rank">🥇 1st Prize</div>
+        <div class="prize-place-amt">₹10,000</div>
+      </div>
+      <div class="prize-place second">
+        <div class="prize-place-rank">🥈 2nd Prize</div>
+        <div class="prize-place-amt">₹7,000</div>
+      </div>
+      <div class="prize-place third">
+        <div class="prize-place-rank">🥉 3rd Prize</div>
+        <div class="prize-place-amt">₹5,000</div>
+      </div>
+    </div>
+
+    <div class="perks-grid">
+      <div class="perk-item"><div class="perk-dot"></div>Branded T-Shirts</div>
+      <div class="perk-item"><div class="perk-dot"></div>Participation Certificates</div>
+      <div class="perk-item"><div class="perk-dot"></div>Exclusive Sticker Collection</div>
+      <div class="perk-item"><div class="perk-dot"></div>Mentorship Sessions</div>
+      <div class="perk-item"><div class="perk-dot"></div>Participation Gifts</div>
+      <div class="perk-item"><div class="perk-dot"></div>Expert Network Access</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SPONSORS ==================== -->
+<section id="sponsors">
+  <div class="section-inner">
+    <div class="sponsors-header">
+      <span class="section-label">Backed By</span>
+      <h2 class="section-title">Sponsors & <span class="accent">Partners</span></h2>
+      <p class="section-desc">Partnering with world-leading technology organizations and social impact initiatives to empower student innovation.</p>
+    </div>
+
+    <div class="sponsor-list">
+      <!-- Algorand -->
+      <div class="sponsor-card">
+        <div class="sponsor-logo-box">
+          <div class="sponsor-logo-text" style="color:var(--teal-light);">Algorand</div>
+        </div>
+        <div>
+          <div class="sponsor-name">Algorand</div>
+          <p class="sponsor-desc">Algorand is a high-performance Layer-1 blockchain platform designed for speed, security, and scalability. It enables developers to build decentralized applications, digital assets, and enterprise-grade blockchain solutions with near-instant finality and low transaction costs. Its energy-efficient Pure Proof-of-Stake consensus makes it a sustainable choice for the next generation of Web3 innovation.</p>
+          <div class="sponsor-tags">
+            <span class="tag">#Algorand</span>
+            <span class="tag">#Blockchain</span>
+            <span class="tag">#Web3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OSEN -->
+      <div class="sponsor-card">
+        <div class="sponsor-logo-box">
+          <div class="sponsor-logo-text" style="color:var(--gold);">OSEN</div>
+        </div>
+        <div>
+          <div class="sponsor-name">OSEN</div>
+          <p class="sponsor-desc">OSEN is a technology-driven organization that supports hackathons, workshops, and developer communities by providing sponsorships, mentorship, speakers, swags, and community growth opportunities. It collaborates with colleges, student communities, and ecosystem partners to help aspiring builders transform innovative ideas into impactful projects.</p>
+          <div class="sponsor-tags">
+            <span class="tag">#OSEN</span>
+            <span class="tag">#Community</span>
+            <span class="tag">#Mentorship</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mewayz -->
+      <div class="sponsor-card">
+        <div class="sponsor-logo-box">
+          <div class="sponsor-logo-text" style="color:var(--text-secondary);font-size:11px;">Mewayz Global</div>
+        </div>
+        <div>
+          <div class="sponsor-name">Mewayz Global Corporation</div>
+          <p class="sponsor-desc">Mewayz Global Corporation, a part of Orcrys Technologies, is an AI-powered Business Operating Platform helping startups, creators, and enterprises scale through intelligent automation. With engineering and AI product teams in Kolkata, Mewayz develops advanced AI orchestration, Web3 solutions, CRM systems, website builders, payment management, and marketing tools within a unified platform.</p>
+          <div class="sponsor-tags">
+            <span class="tag">#Mewayz</span>
+            <span class="tag">#AI</span>
+            <span class="tag">#Startup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="faq" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <div class="faq-header">
+      <span class="section-label">Questions</span>
+      <h2 class="section-title">Frequently <span class="accent">Asked</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q">
+          Who can participate in Voyage 2026?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Voyage is open to all undergraduate and postgraduate students from any college across India (1st Year – Final Year). You don't need prior hackathon experience — just a willingness to build and innovate!</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do I need a team, and how big should it be?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Teams must have 3–4 members. Individual or 2-member registrations are not accepted. Each team must nominate one Team Leader who will be the primary point of contact.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Is there a registration fee?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Registration details including any fee information will be announced soon. Stay tuned to our official channels for updates. Check the website or contact the organizing team for the latest information.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Is the hackathon online or in-person?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Voyage 2026 is an in-person hackathon. The venue will be announced soon. Participants must attend physically for the 36-hour sprint happening on 26–27 September 2026. Participants are required to bring their own laptop, charger, and power backup.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          What should I bring to the Hackathon?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Each participant must bring their own laptop, charger, and power backup. Wear your participant ID at all times inside the hackathon arena. Use only permitted resources and APIs in accordance with hackathon rules.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Will there be mentors available?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Yes! Multiple mentorship sessions are scheduled throughout the hackathon. Industry experts and domain specialists will be available to guide your team, review your approach, and help you build better solutions.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          How will projects be judged?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Projects will be evaluated on Innovation & Creativity, Technical Complexity, Problem-Solution Fit, Scalability, and Presentation Quality. An eminent jury of Industry Leaders, Startup Founders, and domain experts will judge all finalists.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-header">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Connect <span class="accent">With Us</span></h2>
+    </div>
+    <div class="contact-divider"></div>
+    <p class="contact-sub">Have questions regarding Voyage 2026? Reach out to our organizing team through our official channels.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-label">Contact Person</div>
+        <div class="contact-name">Ganpati Raj</div>
+        <div class="contact-role">Organizing Team, GRID Community</div>
+        <a href="tel:+919507542854" class="contact-detail">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16a2 2 0 0 1 .27.92z"/></svg>
+          +91 9507542854
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-label">Contact Person</div>
+        <div class="contact-name">Krishna Raj Barnwal</div>
+        <div class="contact-role">Organizing Team, GRID Community</div>
+        <a href="tel:+917362994375" class="contact-detail">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16a2 2 0 0 1 .27.92z"/></svg>
+          +91 7362994375
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REGISTER ==================== -->
+<section id="register" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <div class="register-header">
+      <span class="section-label">Registration Portal</span>
+      <h2 class="section-title" style="text-transform:uppercase;">Ready to Sail Beyond the Horizon?</h2>
+    </div>
+    <p class="register-sub">Secure your team's spot and compete against India's top innovation talent. Build with cutting-edge technology in an intensive 36-hour sprint.</p>
+
+    <div class="reg-form-wrap">
+      <form id="regForm">
+        <div class="form-section-title">Team Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Team Name <span class="req">*</span></label>
+            <input class="form-input" type="text" placeholder="e.g. Stellar Crew" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Target Track <span class="req">*</span></label>
+            <select class="form-select" required>
+              <option value="">Select a track...</option>
+              <option value="devil">Devil's Triangle — AI & ML</option>
+              <option value="fountain">Fountain of Youth — HealthTech</option>
+              <option value="open">Open Seas — Open Innovation</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section-title">Team Leader Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name <span class="req">*</span></label>
+            <input class="form-input" type="text" placeholder="Leader Name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address <span class="req">*</span></label>
+            <input class="form-input" type="email" placeholder="leader@example.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Mobile Number <span class="req">*</span></label>
+            <input class="form-input" type="tel" placeholder="10-digit number" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">College / University <span class="req">*</span></label>
+            <input class="form-input" type="text" placeholder="e.g. NIT Patna" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Year of Study <span class="req">*</span></label>
+            <select class="form-select" required>
+              <option value="">Select Year...</option>
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+              <option>4th Year</option>
+              <option>Postgraduate</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section-title">Team Members (2–3 Additional)</div>
+        <div id="membersContainer">
+          <div class="member-block">
+            <div class="member-title">MEMBER 1</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name <span class="req">*</span></label>
+                <input class="form-input" type="text" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address <span class="req">*</span></label>
+                <input class="form-input" type="email" placeholder="email@example.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">College / University</label>
+                <input class="form-input" type="text" placeholder="College name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Year of Study</label>
+                <select class="form-select">
+                  <option value="">Select Year...</option>
+                  <option>1st Year</option>
+                  <option>2nd Year</option>
+                  <option>3rd Year</option>
+                  <option>4th Year</option>
+                  <option>Postgraduate</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="add-member-btn" id="addMemberBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <span>+ ADD MEMBER (1/3 ADDITIONAL)</span>
+        </button>
+
+        <button type="submit" class="submit-btn">SUBMIT REGISTRATION →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo">VOYAGE <span>2026</span></a>
+      <p>A premier 36-hour National Hackathon hosted by GRID Community — Sail Beyond Limits. Build Beyond Horizons.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#about">About the Event</a></li>
+        <li><a href="#tracks">Focus Tracks</a></li>
+        <li><a href="#timeline">Schedule & Timeline</a></li>
+        <li><a href="#prizes">Prizes & Rewards</a></li>
+        <li><a href="#faq">Inquiry & FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact & Help</div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+        +91 9507542854
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+        +91 7362994375
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 GRID Community. All rights reserved.</span>
+    <span class="footer-brand-text">VOYAGE 2026</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

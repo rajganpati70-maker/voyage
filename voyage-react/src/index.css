@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #020b18;
+  --bg-secondary: #0a1628;
+  --bg-card: #0d1f35;
+  --teal: #4dd9c9;
+  --teal-dim: rgba(77,217,201,0.12);
+  --teal-border: rgba(77,217,201,0.2);
+  --gold: #c9a84c;
+  --gold-light: #e2c068;
+  --text-primary: #e8f0f8;
+  --text-secondary: #8aaccf;
+  --text-muted: #4a6b8a;
+  --border-card: rgba(255,255,255,0.06);
+  --pixel: 'Press Start 2P', monospace;
+  --mono: 'Space Mono', monospace;
+  --body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; }
