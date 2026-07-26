@@ -248,6 +248,23 @@ body {
   to   { transform: translateY(0%); }
 }
 
+/* Second rain layer — different angle/speed for layered depth */
+.rain-overlay-2 {
+  animation-duration: 0.62s;
+  animation-delay: -0.22s;
+  opacity: 0.5;
+  background-image:
+    repeating-linear-gradient(
+      108deg,
+      transparent 0px,
+      transparent 7px,
+      rgba(100,150,195,0.09) 7px,
+      rgba(100,150,195,0.09) 8.2px,
+      transparent 8.2px,
+      transparent 32px
+    );
+}
+
 .hero-eyebrow {
   font-family: var(--body);
   font-size: 10px;
